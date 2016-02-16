@@ -19,11 +19,11 @@ import java.util.Map;
  */
 public class SimpleDB {
 
-    Context context;
-    SharedPreferences sharedPreferences;
-    String LISTKEY = "LISTKEY";
-    String HASHMAPKEY = "HASHMAPKEY";
-    String CLASSKEY = "CLASSKEY";
+    private Context context;
+    private SharedPreferences sharedPreferences;
+    private String LISTKEY = "LISTKEY";
+    private String HASHMAPKEY = "HASHMAPKEY";
+    private String CLASSKEY = "CLASSKEY";
 
     public SimpleDB (Context context){
         this.context = context;
@@ -219,16 +219,14 @@ public class SimpleDB {
         putListHashMap(KEY, null);
     }
 
-    public void putListInt(String key, ArrayList<Integer> marray,
-                           Context context) {
+    public void putListInt(String key, ArrayList<Integer> marray) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Integer[] mystringlist = marray.toArray(new Integer[marray.size()]);
         editor.putString(key, TextUtils.join("‚‗‚", mystringlist));
         editor.apply();
     }
 
-    public ArrayList<Integer> getListInt(String key,
-                                         Context context) {
+    public ArrayList<Integer> getListInt(String key) {
         String[] mylist = TextUtils
                 .split(sharedPreferences.getString(key, ""), "‚‗‚");
         ArrayList<String> gottenlist = new ArrayList<String>(
