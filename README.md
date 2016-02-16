@@ -1,4 +1,4 @@
-# SimpleDB
+# SimpleDB-android
   The simple way to manage sharedpreference android
   
 # Requirements 
