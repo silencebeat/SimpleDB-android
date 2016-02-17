@@ -76,6 +76,12 @@
         dummyClass.setName("name");
         simpleDB.putObject("DUMMY", dummyClass);
         simpleDB.getObject("DUMMY", DummyClass.class);
+        
+        // clear
+        simpleDB.remove("KEY");
+
+        // clear all
+        simpleDB.clear();
 
     }
   }
